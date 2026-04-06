@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STATS ON PREDATOR KEIRA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* AUTHENTIC MUTED C64 PALETTE VARIABLES */
+        :root {
+            --c64-dark-blue: #40318D;
+            --c64-light-blue: #A3A7C2; /* The muddy, greyish blue */
+            --c64-light-green: #B3C082; /* Muted, retro terminal green */
+            --c64-white: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--c64-light-blue);
+            margin: 0;
+            padding: 2vw;
+            font-family: 'Press Start 2P', monospace;
+            text-transform: uppercase;
+        }
+        .screen {
+            background-color: var(--c64-dark-blue);
+            color: var(--c64-light-blue);
+            padding: 30px;
+            min-height: 90vh;
+            border: 2px solid var(--c64-white);
+            position: relative;
+        }
+        .c64-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .c64-header h1 {
+            font-size: 1.2rem;
+            color: var(--c64-white);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Top Sender Banner */
+        .highlight-banner {
+            border: 2px solid var(--c64-light-blue);
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--c64-light-blue);
+        }
+        .highlight-banner span { color: var(--c64-white); }
+
+        /* Quick Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-box {
+            border: 2px solid var(--c64-light-blue);
+            padding: 15px;
+            text-align: center;
+            font-size: 0.7rem;
+            line-height: 1.5;
+            color: var(--c64-light-blue);
+        }
+        .stat-number {
+            font-size: 1.2rem;
+            color: var(--c64-white);
+            margin-bottom: 10px;
+        }
+
+        /* Middle Section: High Scores & Heatmap */
+        .middle-grid {
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* Top Senders Text List (High Scores) */
+        .high-score-board {
+            border: 2px solid var(--c64-light-blue);
+            padding: 15px;
+        }
+        .high-score-header {
+            color: var(--c64-white);
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 1px dashed var(--c64-light-blue);
+            padding-bottom: 10px;
+        }
+        .score-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            margin-bottom: 12px;
+            color: var(--c64-light-green);
+        }
+        .score-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-right: 10px; }
+        .score-amount { color: var(--c64-white); }
+
+        /* GITHUB STYLE HEATMAP */
+        .heatmap-outer {
+            border: 2px solid var(--c64-light-blue);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .heatmap-title {
+            color: var(--c64-white);
+            font-size: 0.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .heatmap-layout {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            grid-template-rows: 20px 1fr;
+            gap: 8px;
+            flex-grow: 1;
+        }
+
+        .heatmap-month-labels {
+            grid-column: 2;
+            grid-row: 1;
+            display: grid;
+            gap: 6px;
+            font-size: 0.6rem;
+            color: var(--c64-white);
+            align-items: end;
+        }
+
+        .heatmap-day-labels {
+            grid-column: 1;
+            grid-row: 2;
+            display: grid;
+            grid-template-rows: repeat(7, 1fr);
+            gap: 6px;
+            font-size: 0.55rem;
+            color: var(--c64-light-blue);
+            text-align: right;
+            padding-right: 5px;
+            align-items: center;
+        }
+
+        .heatmap-grid {
+            grid-column: 2;
+            grid-row: 2;
+            display: grid;
+            grid-template-rows: repeat(7, 1fr);
+            grid-auto-flow: column;
+            gap: 6px;
+        }
+        .day-square {
+            width: 100%;
+            height: 100%;
+            min-height: 20px;
+            border-radius: 2px;
+            cursor: crosshair;
+            border: 1px solid rgba(179, 192, 130, 0.2);
+            transition: transform 0.1s;
+        }
+        .day-square:hover {
+            transform: scale(1.1);
+            border: 1px solid var(--c64-white);
+        }
+        /* Future ghost square (invisible, no hover) */
+        .future-square {
+            width: 100%;
+            height: 100%;
+            min-height: 20px;
+            border-radius: 2px;
+            border: 1px solid transparent;
+            background-color: transparent;
+            pointer-events: none; /* Prevents tooltips from appearing */
+        }
+
+        /* Custom Hover Tooltip */
+        #tooltip {
+            position: absolute;
+            display: none;
+            background-color: var(--c64-dark-blue);
+            border: 2px solid var(--c64-light-green);
+            color: var(--c64-light-green);
+            padding: 12px;
+            font-size: 0.65rem;
+            line-height: 1.6;
+            pointer-events: none;
+            z-index: 100;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+        }
+
+        /* SYSTEM LOG - CENTERED & STACKED LAYOUT */
+        .log-container {
+            border: 2px solid var(--c64-light-blue);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .log-header {
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--c64-white);
+            font-size: 0.8rem;
+        }
+        .log-window {
+            max-height: 350px;
+            overflow-y: auto;
+            font-size: 0.7rem;
+            padding-right: 5px;
+        }
+
+        .log-row {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto;
+            justify-content: center;
+            column-gap: 20px;
+            row-gap: 5px;
+            border-bottom: 1px solid var(--c64-light-blue);
+            padding: 12px 0;
+        }
+        .log-time {
+            grid-column: 1 / 3;
+            text-align: center;
+            color: var(--c64-light-blue);
+            font-size: 0.6rem;
+        }
+        .log-name {
+            grid-column: 1;
+            color: var(--c64-light-green);
+            text-align: right;
+            white-space: normal;
+            word-break: break-all;
+            max-width: 250px;
+        }
+        .log-amount {
+            grid-column: 2;
+            color: var(--c64-white);
+            text-align: left;
+        }
+
+        /* Scrollbar */
+        .log-window::-webkit-scrollbar { width: 12px; }
+        .log-window::-webkit-scrollbar-track { background: var(--c64-dark-blue); border-left: 2px solid var(--c64-light-blue); }
+        .log-window::-webkit-scrollbar-thumb { background: var(--c64-light-blue); }
+
+        @media (max-width: 1000px) {
+            .middle-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="screen">
+    <div id="tooltip"></div>
+
+    <div class="c64-header">
+        <h1 id="mainTitle">STATS ON PREDATOR KEIRA SINCE CALCULATING...</h1>
+    </div>
+
+    <div class="highlight-banner" id="topSenderBanner">
+        AWAITING DATA SYNC...
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-box">
+            <div class="stat-number" id="totalAllTime">$0</div>
+            <div>TOTAL (ALL TIME)</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number" id="totalMonth">$0</div>
+            <div>TOTAL (THIS MONTH)</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number" id="totalToday">$0</div>
+            <div>TOTAL TODAY</div>
+        </div>
+    </div>
+
+    <div class="middle-grid">
+        <div class="high-score-board">
+            <div class="high-score-header">--- TOP SENDERS ---</div>
+            <div id="topSendersList"></div>
+        </div>
+
+        <div class="heatmap-outer">
+            <div class="heatmap-title">ACTIVITY DENSITY</div>
+            <div class="heatmap-layout">
+                <div class="heatmap-month-labels" id="heatmapMonths"></div>
+
+                <div class="heatmap-day-labels">
+                    <div></div><div>MON</div><div></div><div>WED</div><div></div><div>FRI</div><div></div>
+                </div>
+
+                <div class="heatmap-grid" id="heatmapGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="log-container">
+        <div class="log-header">--- ALL DETECTED SENDS ---</div>
+        <div class="log-window" id="transactionLog"></div>
+    </div>
+</div>
+
+<script>
+    // 1. FETCH LIVE DATA FROM JSON
+    async function loadLiveData() {
+        try {
+            const response = await fetch('last_sends.json?t=' + new Date().getTime());
+
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+
+            const rawData = await response.json();
+            processData(rawData);
+
+        } catch (error) {
+            console.error("TELEMETRY ERROR: Could not load last_sends.json", error);
+            document.getElementById('mainTitle').innerText = "SYSTEM ERROR: LAST_SENDS.JSON NOT FOUND";
+            document.getElementById('topSenderBanner').innerText = "ENSURE GITHUB ACTION HAS PUSHED LAST_SENDS.JSON TO THIS DIRECTORY.";
+        }
+    }
+
+    loadLiveData();
+
+    // 2. EXCHANGE RATE DICTIONARY & CONVERTER
+    const exchangeRates = {
+        '$': 1.0,
+        '£': 1.26,
+        '฿': 0.027,
+        '€': 1.08
+    };
+
+    function parseAndConvert(amountString) {
+        const numMatch = amountString.match(/[\d,.]+/);
+        if (!numMatch) return 0;
+
+        const rawNumber = parseFloat(numMatch[0].replace(/,/g, ''));
+
+        let rate = 1.0;
+        for (const symbol in exchangeRates) {
+            if (amountString.includes(symbol)) {
+                rate = exchangeRates[symbol];
+                break;
+            }
+        }
+
+        return rawNumber * rate;
+    }
+
+    function formatC64Date(dateStr, includeTime = true) {
+        if (!dateStr) return "UNKNOWN TIME";
+
+        const parts = dateStr.split(' ');
+        if (parts.length < 3 && includeTime) return dateStr;
+
+        const dateParts = parts[0].split('-');
+        const monthNum = parseInt(dateParts[1], 10);
+        const dayNum = parseInt(dateParts[2], 10);
+
+        const months = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
+        const monthName = months[monthNum - 1];
+
+        let suffix = "TH";
+        if (dayNum % 10 === 1 && dayNum !== 11) suffix = "ST";
+        else if (dayNum % 10 === 2 && dayNum !== 12) suffix = "ND";
+        else if (dayNum % 10 === 3 && dayNum !== 13) suffix = "RD";
+
+        if (!includeTime || parts.length < 3) return `${dayNum}${suffix} ${monthName}`;
+
+        const timeParts = parts[1].split(':');
+        return `${dayNum}${suffix} ${monthName} ${timeParts[0]}:${timeParts[1]} ${parts[2]}`;
+    }
+
+    function getMonthName(monthIndex) {
+        const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+        return months[monthIndex];
+    }
+
+    // 3. DATA PROCESSING ENGINE
+    function processData(rawData) {
+        if (!rawData || !rawData.alquis || !rawData.alquis.sends) {
+            document.getElementById('mainTitle').innerText = "SYSTEM ERROR: INVALID OR MISSING 'ALQUIS' DATA";
+            return;
+        }
+
+        let totalAllTime = 0;
+        let totalThisMonth = 0;
+        let totalToday = 0;
+
+        let senderAggregates = {};
+        let dailyTotals = {};
+
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        const currentMonthStr = String(now.getMonth() + 1).padStart(2, '0');
+        const currentDayStr = String(now.getDate()).padStart(2, '0');
+
+        const todayTarget = `${currentYear}-${currentMonthStr}-${currentDayStr}`;
+        const monthTarget = `${currentYear}-${currentMonthStr}`;
+
+        let earliestDateString = "9999-99-99";
+        let latestDateString = "0000-00-00";
+
+        const alquisSends = rawData["alquis"].sends;
+        let logHTML = "";
+
+        alquisSends.forEach(tx => {
+            const amountUSD = parseAndConvert(tx.amount);
+            totalAllTime += amountUSD;
+
+            if (tx.detected_at) {
+                const justDate = tx.detected_at.split(' ')[0];
+                if (justDate < earliestDateString) earliestDateString = justDate;
+                if (justDate > latestDateString) latestDateString = justDate;
+
+                dailyTotals[justDate] = (dailyTotals[justDate] || 0) + amountUSD;
+
+                if (tx.detected_at.includes(todayTarget)) totalToday += amountUSD;
+                if (tx.detected_at.includes(monthTarget)) totalThisMonth += amountUSD;
+            }
+
+            const lowerCaseName = tx.sender.trim().toLowerCase();
+            if (!senderAggregates[lowerCaseName]) {
+                senderAggregates[lowerCaseName] = {
+                    originalName: tx.sender.trim(),
+                    totalAmount: 0
+                };
+            }
+            senderAggregates[lowerCaseName].totalAmount += amountUSD;
+
+            const displayTime = formatC64Date(tx.detected_at);
+            const originalAmountString = tx.amount;
+
+            logHTML += `
+                <div class="log-row">
+                    <div class="log-time">${displayTime}</div>
+                    <div class="log-name">${tx.sender}</div>
+                    <div class="log-amount">${originalAmountString}</div>
+                </div>
+            `;
+        });
+
+        document.getElementById('transactionLog').innerHTML = logHTML;
+
+        const formattedEarliest = formatC64Date(earliestDateString + " 00:00", false);
+        document.getElementById('mainTitle').innerText = `STATS ON PREDATOR KEIRA SINCE ${formattedEarliest}`;
+
+        let topSenderName = "NO DATA";
+        let topSenderAmount = 0;
+
+        const sortedSenders = Object.values(senderAggregates)
+            .sort((a, b) => b.totalAmount - a.totalAmount);
+
+        let topListHTML = "";
+        let rank = 1;
+
+        sortedSenders.forEach(sender => {
+            if (sender.originalName.toLowerCase() !== "someone" && sender.originalName.toLowerCase() !== "anonymous" && sender.originalName.toLowerCase() !== "blank") {
+                if (sender.totalAmount > topSenderAmount) {
+                    topSenderAmount = sender.totalAmount;
+                    topSenderName = sender.originalName;
+                }
+            }
+            if (rank <= 9) {
+                topListHTML += `
+                    <div class="score-row">
+                        <div class="score-name">${rank}. ${sender.originalName.toUpperCase()}</div>
+                        <div class="score-amount">$${Math.round(sender.totalAmount).toLocaleString()}</div>
+                    </div>
+                `;
+                rank++;
+            }
+        });
+
+        document.getElementById('topSendersList').innerHTML = topListHTML;
+
+        document.getElementById('totalAllTime').innerText = '$' + Math.round(totalAllTime).toLocaleString();
+        document.getElementById('totalMonth').innerText = '$' + Math.round(totalThisMonth).toLocaleString();
+        document.getElementById('totalToday').innerText = '$' + Math.round(totalToday).toLocaleString();
+        document.getElementById('topSenderBanner').innerHTML =
+            `TOP DETECTED SENDER: <span>${topSenderName.toUpperCase()}</span> ($${Math.round(topSenderAmount).toLocaleString()})`;
+
+        // 4. GENERATE HEATMAP
+        const maxDailyVolume = Math.max(...Object.values(dailyTotals), 1);
+
+        // Force the calendar to always draw up to the CURRENT REAL WORLD DAY
+        if (latestDateString < todayTarget) {
+            latestDateString = todayTarget;
+        }
+
+        const [sY, sM, sD] = earliestDateString.split('-');
+        const [eY, eM, eD] = latestDateString.split('-');
+
+        const startDate = new Date(sY, sM - 1, sD);
+        const endDate = new Date(eY, eM - 1, eD);
+
+        // A strict 'midnight' object for today to figure out if we are in the "future"
+        const strictToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+        startDate.setDate(startDate.getDate() - startDate.getDay());
+        endDate.setDate(endDate.getDate() + (6 - endDate.getDay()));
+
+        let totalWeeks = Math.round((endDate - startDate) / (7 * 24 * 60 * 60 * 1000));
+        if (totalWeeks === 0) totalWeeks = 1;
+
+        let heatmapHTML = "";
+        let monthLabelsArray = new Array(totalWeeks).fill("");
+
+        let currentDate = new Date(startDate);
+        let currentMonth = -1;
+        let colIndex = 0;
+
+        while (currentDate <= endDate) {
+            if (currentDate.getMonth() !== currentMonth) {
+                monthLabelsArray[colIndex] = getMonthName(currentDate.getMonth());
+                currentMonth = currentDate.getMonth();
+            }
+
+            // Check if the square is in the future relative to REAL WORLD "Today"
+            if (currentDate > strictToday) {
+                // Invisible "ghost" square for future days
+                heatmapHTML += `<div class="future-square"></div>`;
+            } else {
+                // Standard logic for past & present days
+                const dStr = currentDate.getFullYear() + "-" +
+                             String(currentDate.getMonth() + 1).padStart(2, '0') + "-" +
+                             String(currentDate.getDate()).padStart(2, '0');
+
+                const dayVal = dailyTotals[dStr] || 0;
+
+                let opacity = 0.05;
+                if (dayVal > 0) {
+                    if (dayVal <= maxDailyVolume * 0.15) opacity = 0.25;
+                    else if (dayVal <= maxDailyVolume * 0.40) opacity = 0.50;
+                    else if (dayVal <= maxDailyVolume * 0.70) opacity = 0.75;
+                    else opacity = 1.0;
+                }
+
+                const friendlyDate = formatC64Date(dStr + " 00:00", false);
+                heatmapHTML += `<div class="day-square" style="background-color: rgba(179, 192, 130, ${opacity});" data-date="${friendlyDate}" data-val="${dayVal}"></div>`;
+            }
+
+            if (currentDate.getDay() === 6) {
+                colIndex++;
+            }
+
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+
+        let monthHTML = "";
+        monthLabelsArray.forEach(label => {
+            monthHTML += `<div>${label}</div>`;
+        });
+
+        const gridColumnsRule = `repeat(${totalWeeks}, 1fr)`;
+
+        const gridEl = document.getElementById('heatmapGrid');
+        gridEl.innerHTML = heatmapHTML;
+        gridEl.style.gridTemplateColumns = gridColumnsRule;
+
+        const monthEl = document.getElementById('heatmapMonths');
+        monthEl.innerHTML = monthHTML;
+        monthEl.style.gridTemplateColumns = gridColumnsRule;
+
+        // 5. TOOLTIP EVENT LISTENERS
+        const tooltip = document.getElementById('tooltip');
+        const squares = document.querySelectorAll('.day-square');
+
+        squares.forEach(sq => {
+            sq.addEventListener('mouseenter', (e) => {
+                tooltip.style.display = 'block';
+                tooltip.innerHTML = `${sq.dataset.date}<br><span style="color:#FFFFFF;">$${Math.round(sq.dataset.val).toLocaleString()}</span>`;
+                updateTooltipPosition(e);
+            });
+
+            sq.addEventListener('mousemove', updateTooltipPosition);
+
+            sq.addEventListener('mouseleave', () => {
+                tooltip.style.display = 'none';
+            });
+        });
+
+        function updateTooltipPosition(e) {
+            tooltip.style.left = (e.pageX + 15) + 'px';
+            tooltip.style.top = (e.pageY + 15) + 'px';
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,704 @@
+{
+  "alquis": {
+    "uid": "it54UEAVGkdEcRJLthGuidZHObp2",
+    "sends": [
+      {
+        "sender": "Someone",
+        "amount": "$15.55",
+        "detected_at": "2026-04-05 17:40:21 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$75",
+        "detected_at": "2026-04-05 16:00:35 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-04-05 15:42:25 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-04-05 14:46:16 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$75",
+        "detected_at": "2026-04-05 12:30:28 EDT"
+      },
+      {
+        "sender": "poorer",
+        "amount": "\u00a3200",
+        "detected_at": "2026-04-05 10:18:19 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-04-01 23:16:19 EDT"
+      },
+      {
+        "sender": "ma",
+        "amount": "$101",
+        "detected_at": "2026-04-01 17:14:19 EDT"
+      },
+      {
+        "sender": "ma",
+        "amount": "$101",
+        "detected_at": "2026-04-01 16:02:27 EDT"
+      },
+      {
+        "sender": "princessquire",
+        "amount": "$200",
+        "detected_at": "2026-03-31 15:16:25 EDT"
+      },
+      {
+        "sender": "princessquire",
+        "amount": "$200",
+        "detected_at": "2026-03-31 14:00:39 EDT"
+      },
+      {
+        "sender": "princessquire",
+        "amount": "$200",
+        "detected_at": "2026-03-31 13:38:17 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-31 12:06:27 EDT"
+      },
+      {
+        "sender": "princessquire",
+        "amount": "$200",
+        "detected_at": "2026-03-30 09:04:18 EDT"
+      },
+      {
+        "sender": "princessquire",
+        "amount": "$200",
+        "detected_at": "2026-03-30 06:58:17 EDT"
+      },
+      {
+        "sender": "princessquire",
+        "amount": "$200",
+        "detected_at": "2026-03-30 06:36:21 EDT"
+      },
+      {
+        "sender": "princessquire",
+        "amount": "$300",
+        "detected_at": "2026-03-29 22:18:19 EDT"
+      },
+      {
+        "sender": "princessquire",
+        "amount": "$200",
+        "detected_at": "2026-03-29 21:58:19 EDT"
+      },
+      {
+        "sender": "princessquire",
+        "amount": "$400",
+        "detected_at": "2026-03-29 18:24:20 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-29 18:22:09 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-29 17:50:21 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-29 13:34:20 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$100",
+        "detected_at": "2026-03-29 02:06:20 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$100",
+        "detected_at": "2026-03-29 01:14:19 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$100",
+        "detected_at": "2026-03-29 00:00:36 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-28 23:54:20 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-28 23:24:19 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$100",
+        "detected_at": "2026-03-28 23:18:18 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-28 23:12:21 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-28 23:12:21 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$100",
+        "detected_at": "2026-03-28 22:24:16 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-28 22:16:19 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$100",
+        "detected_at": "2026-03-28 21:02:19 EDT"
+      },
+      {
+        "sender": "jesterjester707 unblock :(",
+        "amount": "$101",
+        "detected_at": "2026-03-28 02:02:18 EDT"
+      },
+      {
+        "sender": "brokedaisy",
+        "amount": "$101",
+        "detected_at": "2026-03-28 01:12:19 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-25 01:00:32 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-25 00:56:15 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-23 22:52:17 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$300",
+        "detected_at": "2026-03-23 22:10:21 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$500",
+        "detected_at": "2026-03-23 21:50:23 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-23 20:50:23 EDT"
+      },
+      {
+        "sender": "tora220059 please unblock",
+        "amount": "$100",
+        "detected_at": "2026-03-23 19:06:18 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-23 18:38:15 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-23 18:16:16 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-23 18:14:18 EDT"
+      },
+      {
+        "sender": "tora give me chance plz",
+        "amount": "$50",
+        "detected_at": "2026-03-23 18:06:18 EDT"
+      },
+      {
+        "sender": "tora plz unblock",
+        "amount": "$100",
+        "detected_at": "2026-03-23 18:00:36 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-23 17:58:19 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-23 17:58:19 EDT"
+      },
+      {
+        "sender": "@tora220059 plz talk to me",
+        "amount": "$100",
+        "detected_at": "2026-03-23 17:48:17 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-23 17:18:17 EDT"
+      },
+      {
+        "sender": "alquis13",
+        "amount": "$101",
+        "detected_at": "2026-03-23 05:02:17 EDT"
+      },
+      {
+        "sender": "alquis13",
+        "amount": "$101",
+        "detected_at": "2026-03-23 03:24:23 EDT"
+      },
+      {
+        "sender": "alquis13",
+        "amount": "$101",
+        "detected_at": "2026-03-23 02:40:23 EDT"
+      },
+      {
+        "sender": "thx",
+        "amount": "$101",
+        "detected_at": "2026-03-23 02:04:21 EDT"
+      },
+      {
+        "sender": "ow",
+        "amount": "$101",
+        "detected_at": "2026-03-23 01:44:17 EDT"
+      },
+      {
+        "sender": "alquis13",
+        "amount": "$101",
+        "detected_at": "2026-03-23 01:16:18 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-22 10:56:20 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-22 09:56:19 EDT"
+      },
+      {
+        "sender": "Anonymous",
+        "amount": "$100",
+        "detected_at": "2026-03-22 03:26:16 EDT"
+      },
+      {
+        "sender": "brad",
+        "amount": "$60",
+        "detected_at": "2026-03-22 02:36:20 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-22 00:50:22 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-22 00:34:17 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-21 23:44:18 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-21 22:00:34 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-21 19:14:15 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-21 19:02:21 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-21 07:28:18 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$20",
+        "detected_at": "2026-03-21 04:24:15 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$25",
+        "detected_at": "2026-03-21 04:22:20 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$20",
+        "detected_at": "2026-03-18 18:26:19 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$200",
+        "detected_at": "2026-03-18 01:48:19 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$150",
+        "detected_at": "2026-03-18 00:48:17 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$150",
+        "detected_at": "2026-03-18 00:28:19 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-17 22:01:17 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-17 21:42:17 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-17 21:22:17 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-16 17:24:20 EDT"
+      },
+      {
+        "sender": "joeymalone44",
+        "amount": "$101",
+        "detected_at": "2026-03-16 14:12:21 EDT"
+      },
+      {
+        "sender": "Taylor lf",
+        "amount": "$101",
+        "detected_at": "2026-03-15 20:44:17 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-15 20:24:16 EDT"
+      },
+      {
+        "sender": "Taylor",
+        "amount": "$101",
+        "detected_at": "2026-03-15 19:54:17 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-15 19:20:26 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-15 17:44:18 EDT"
+      },
+      {
+        "sender": "sorry daddy",
+        "amount": "\u00a377",
+        "detected_at": "2026-03-15 16:06:22 EDT"
+      },
+      {
+        "sender": "Anonymous",
+        "amount": "$101",
+        "detected_at": "2026-03-15 16:04:21 EDT"
+      },
+      {
+        "sender": "@weirdluck01",
+        "amount": "$50",
+        "detected_at": "2026-03-15 14:50:22 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-15 14:32:17 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-15 14:26:16 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "\u00a338.19",
+        "detected_at": "2026-03-15 13:18:16 EDT"
+      },
+      {
+        "sender": "Anonymous",
+        "amount": "\u0e3f1638.22",
+        "detected_at": "2026-03-14 23:52:16 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$40",
+        "detected_at": "2026-03-14 23:34:16 EDT"
+      },
+      {
+        "sender": "alquis: >>>>>",
+        "amount": "\u00a377.2",
+        "detected_at": "2026-03-14 16:26:16 EDT"
+      },
+      {
+        "sender": "princessquire",
+        "amount": "$200",
+        "detected_at": "2026-03-13 22:42:18 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-13 21:54:17 EDT"
+      },
+      {
+        "sender": "lurky",
+        "amount": "$101",
+        "detected_at": "2026-03-13 21:28:16 EDT"
+      },
+      {
+        "sender": "Jodel5",
+        "amount": "$200",
+        "detected_at": "2026-03-13 21:14:17 EDT"
+      },
+      {
+        "sender": "Jodel5",
+        "amount": "$100",
+        "detected_at": "2026-03-13 21:08:17 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$60",
+        "detected_at": "2026-03-13 12:16:20 EDT"
+      },
+      {
+        "sender": "Shrimper",
+        "amount": "$200",
+        "detected_at": "2026-03-12 12:04:28 EDT"
+      },
+      {
+        "sender": "shrimper",
+        "amount": "$60",
+        "detected_at": "2026-03-12 05:14:20 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-12 05:14:20 EDT"
+      },
+      {
+        "sender": "Shrimper",
+        "amount": "$101",
+        "detected_at": "2026-03-12 05:14:20 EDT"
+      },
+      {
+        "sender": "shrimper",
+        "amount": "$101",
+        "detected_at": "2026-03-11 19:58:17 EDT"
+      },
+      {
+        "sender": "Anonymous",
+        "amount": "$101",
+        "detected_at": "2026-03-11 19:36:16 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$200",
+        "detected_at": "2026-03-11 18:26:17 EDT"
+      },
+      {
+        "sender": "and mad at how hot you are",
+        "amount": "$101",
+        "detected_at": "2026-03-10 21:26:18 EDT"
+      },
+      {
+        "sender": "bitcoin was trippin",
+        "amount": "$200",
+        "detected_at": "2026-03-09 19:02:17 EDT"
+      },
+      {
+        "sender": "work's been really hard",
+        "amount": "$101",
+        "detected_at": "2026-03-09 13:58:19 EDT"
+      },
+      {
+        "sender": "@boopsjoeay39465",
+        "amount": "$50",
+        "detected_at": "2026-03-09 13:26:19 EDT"
+      },
+      {
+        "sender": "alquis=dabomb",
+        "amount": "\u00a377",
+        "detected_at": "2026-03-09 12:54:19 EDT"
+      },
+      {
+        "sender": "alquis=cntiest",
+        "amount": "\u00a377",
+        "detected_at": "2026-03-09 12:36:19 EDT"
+      },
+      {
+        "sender": "alquis=wittiest",
+        "amount": "\u00a377",
+        "detected_at": "2026-03-09 12:14:23 EDT"
+      },
+      {
+        "sender": "alquis=smartest",
+        "amount": "\u00a377",
+        "detected_at": "2026-03-09 11:44:19 EDT"
+      },
+      {
+        "sender": "alquis: smartest",
+        "amount": "\u00a377",
+        "detected_at": "2026-03-09 11:40:25 EDT"
+      },
+      {
+        "sender": "intl alquis day",
+        "amount": "\u00a377",
+        "detected_at": "2026-03-09 10:58:18 EDT"
+      },
+      {
+        "sender": "international alquis day",
+        "amount": "\u00a377",
+        "detected_at": "2026-03-09 10:22:20 EDT"
+      },
+      {
+        "sender": "Christian",
+        "amount": "$50",
+        "detected_at": "2026-03-09 02:10:21 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$101",
+        "detected_at": "2026-03-09 01:56:18 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-03-09 01:50:21 EDT"
+      },
+      {
+        "sender": "Sissy Blake",
+        "amount": "$50",
+        "detected_at": "2026-03-08 20:28:18 EDT"
+      },
+      {
+        "sender": "it's 20",
+        "amount": "\u00a377",
+        "detected_at": "2026-03-08 14:56:19 EDT"
+      },
+      {
+        "sender": "mcbutt @gordon_greedy",
+        "amount": "\u00a377",
+        "detected_at": "2026-03-08 14:18:17 EDT"
+      },
+      {
+        "sender": "mcbutt remainder for ub",
+        "amount": "\u00a377",
+        "detected_at": "2026-03-08 14:14:19 EDT"
+      },
+      {
+        "sender": "hott ogo UB McB y or n",
+        "amount": "\u00a377",
+        "detected_at": "2026-03-08 13:52:17 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$100",
+        "detected_at": "2026-03-06 18:45:23 EST"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$100",
+        "detected_at": "2026-03-06 18:40:28 EST"
+      },
+      {
+        "sender": "blank",
+        "amount": "$100",
+        "detected_at": "2026-03-05 14:05:21 EST"
+      },
+      {
+        "sender": "uh @alimohs21532273",
+        "amount": "$100",
+        "detected_at": "2026-03-04 20:30:27 EST"
+      },
+      {
+        "sender": "princessquire",
+        "amount": "$200"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$150"
+      },
+      {
+        "sender": "@hosekirocks",
+        "amount": "$145.32"
+      },
+      {
+        "sender": "pumpkin",
+        "amount": "$200",
+        "detected_at": "2026-03-04 11:45:37 EST"
+      }
+    ]
+  },
+  "gnnx": {
+    "uid": "FN70NUv8JFQvEUUre5odEeQny3m2",
+    "sends": [
+      {
+        "sender": "tatugobrea",
+        "amount": "$100"
+      },
+      {
+        "sender": "tatugobrea",
+        "amount": "$100"
+      },
+      {
+        "sender": "tatugobrea",
+        "amount": "$113"
+      }
+    ]
+  },
+  "juju": {
+    "uid": "mGZYDCNV01Tgyf1UKXuuFhr61e43",
+    "sends": [
+      {
+        "sender": "Hidden",
+        "amount": "$901"
+      }
+    ]
+  },
+  "lili": {
+    "uid": "mGZYDCNV01Tgyf1UKXuuFhr61e43",
+    "sends": [
+      {
+        "sender": "Hidden",
+        "amount": "$901"
+      }
+    ]
+  }
+}
