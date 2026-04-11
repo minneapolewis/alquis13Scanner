@@ -4,6 +4,11 @@
     "sends": [
       {
         "sender": "Anonymous",
+        "amount": "\u00a3400",
+        "detected_at": "2026-04-11 07:04:15 EDT"
+      },
+      {
+        "sender": "Anonymous",
         "amount": "\u00a3300",
         "detected_at": "2026-04-11 07:00:41 EDT"
       },
