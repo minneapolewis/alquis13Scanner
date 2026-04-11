@@ -3,6 +3,21 @@
     "uid": "it54UEAVGkdEcRJLthGuidZHObp2",
     "sends": [
       {
+        "sender": "Anonymous",
+        "amount": "\u00a3300",
+        "detected_at": "2026-04-11 07:00:41 EDT"
+      },
+      {
+        "sender": "Anonymous",
+        "amount": "\u00a3115.69",
+        "detected_at": "2026-04-11 07:00:41 EDT"
+      },
+      {
+        "sender": "Anonymous",
+        "amount": "\u00a360",
+        "detected_at": "2026-04-11 07:00:41 EDT"
+      },
+      {
         "sender": "Hidden",
         "amount": "$901",
         "detected_at": "2026-04-05 23:38:15 EDT"
