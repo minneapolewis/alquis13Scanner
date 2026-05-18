@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TELEMETRY MONITOR</title>
+    <title>Minne@polewis</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         /* AUTHENTIC MUTED C64 PALETTE VARIABLES */
@@ -353,9 +353,10 @@
     let currentProfileKey = "alquis";
     let currentProfileDisplayName = "KEIRA";
 
-    // 1. FETCH LIVE DATA FROM JSON
+    // 1. FETCH LIVE DATA FROM JSON (With Live Polling)
     async function loadLiveData() {
         try {
+            // Using a timestamp cache-buster to always pull the freshest server data
             const response = await fetch('last_sends.json?t=' + new Date().getTime());
 
             if (!response.ok) {
@@ -363,16 +364,30 @@
             }
 
             globalDataStore = await response.json();
+            
+            // Re-render whichever profile the user is currently viewing
             renderProfile();
 
         } catch (error) {
             console.error("TELEMETRY ERROR: Could not load last_sends.json", error);
-            document.getElementById('mainTitle').innerText = "SYSTEM ERROR: LAST_SENDS.JSON NOT FOUND";
-            document.getElementById('topSenderBanner').innerText = "ENSURE GITHUB ACTION HAS PUSHED LAST_SENDS.JSON TO THIS DIRECTORY.";
+            // Only overwrite UI text if it's the absolute first time failing and we have no data at all
+            if (!globalDataStore) {
+                document.getElementById('mainTitle').innerText = "SYSTEM ERROR: LAST_SENDS.JSON NOT FOUND";
+                document.getElementById('topSenderBanner').innerText = "ENSURE GITHUB ACTION HAS PUSHED LAST_SENDS.JSON TO THIS DIRECTORY.";
+            }
         }
     }
 
+    // --- LIVE FEED INITIALIZATION ---
+    // Load immediately on page boot
     loadLiveData();
+
+    // Query the server for new scraper updates automatically every 30 seconds
+    setInterval(() => {
+        console.log("Polling database for new entries...");
+        loadLiveData();
+    }, 30000); 
+
 
     // PROFILE TAB SWITCHER CONTROLLER
     function switchProfile(profileKey, displayName) {
@@ -447,11 +462,11 @@
         return months[monthIndex];
     }
 
-    // 3. SEPARATED RUNTIME RENDERER
+    // 3. RUNTIME RENDERER
     function renderProfile() {
         if (!globalDataStore) return;
         
-        // Safety Fallback Check for selected profiles inside JSON
+        // Safety Fallback Check for missing profile data inside JSON
         if (!globalDataStore[currentProfileKey] || !globalDataStore[currentProfileKey].sends || globalDataStore[currentProfileKey].sends.length === 0) {
             document.getElementById('mainTitle').innerText = `STATS ON PREDATOR ${currentProfileDisplayName}`;
             document.getElementById('topSenderBanner').innerHTML = "AWAITING TELEMETRY DATA SYNC...";
@@ -459,8 +474,11 @@
             document.getElementById('totalMonth').innerText = "$0";
             document.getElementById('totalToday').innerText = "$0";
             document.getElementById('topSendersList').innerHTML = "";
+            
+            // Clean out calendar artifacts immediately on empty tracks
             document.getElementById('heatmapGrid').innerHTML = "";
             document.getElementById('heatmapMonths').innerHTML = "";
+            
             document.getElementById('transactionLog').innerHTML = `<div style="text-align:center; padding:20px;">NO RECORDED ENTRIES FOUND IN SYSTEM FILE FOR THIS ACCOUNT.</div>`;
             return;
         }
