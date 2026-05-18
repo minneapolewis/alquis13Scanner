@@ -27,6 +27,10 @@ PROFILES_TO_TRACK = [
     {
         "username": "lili",
         "tweet_message": "Lili just got sent {amount} from {sender_name} at {est_time} EST"
+    },
+    {
+        "username": "sophie2082",
+        "tweet_message": "Sophie just got sent {amount} from {sender_name} at {est_time} EST"
     }
 ]
 
