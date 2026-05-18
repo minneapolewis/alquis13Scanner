@@ -745,5 +745,25 @@
         "amount": "$901"
       }
     ]
+  },
+  "sophie2082": {
+    "uid": "al0jpBLvOVY0VUTIMBMIR5H8VxS2",
+    "sends": [
+      {
+        "sender": "Someone",
+        "amount": "$50",
+        "detected_at": "2026-05-17 22:58:20 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$30",
+        "detected_at": "2026-05-17 22:58:20 EDT"
+      },
+      {
+        "sender": "Someone",
+        "amount": "$32.38",
+        "detected_at": "2026-05-17 22:58:20 EDT"
+      }
+    ]
   }
 }
