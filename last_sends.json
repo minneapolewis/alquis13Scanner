@@ -750,6 +750,11 @@
     "uid": "al0jpBLvOVY0VUTIMBMIR5H8VxS2",
     "sends": [
       {
+        "sender": "Someone",
+        "amount": "$35.31",
+        "detected_at": "2026-05-18 00:36:19 EDT"
+      },
+      {
         "sender": "Anonymous",
         "amount": "$50.14",
         "detected_at": "2026-05-18 00:26:27 EDT"
