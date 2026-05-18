@@ -751,6 +751,11 @@
     "sends": [
       {
         "sender": "Someone",
+        "amount": "$30.33",
+        "detected_at": "2026-05-17 23:34:20 EDT"
+      },
+      {
+        "sender": "Someone",
         "amount": "$50",
         "detected_at": "2026-05-17 22:58:20 EDT"
       },
